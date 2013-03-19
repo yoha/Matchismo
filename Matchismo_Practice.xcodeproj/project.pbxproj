@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E54468416F8389B00536FA7 /* PlayingCardMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E54468316F8389B00536FA7 /* PlayingCardMatching.m */; };
 		9E824E4C16F02DAD00EB88E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E824E4B16F02DAD00EB88E5 /* UIKit.framework */; };
 		9E824E4E16F02DAD00EB88E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E824E4D16F02DAD00EB88E5 /* Foundation.framework */; };
 		9E824E5016F02DAD00EB88E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E824E4F16F02DAD00EB88E5 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E54468216F8389B00536FA7 /* PlayingCardMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardMatching.h; path = Model/PlayingCardMatching.h; sourceTree = "<group>"; };
+		9E54468316F8389B00536FA7 /* PlayingCardMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardMatching.m; path = Model/PlayingCardMatching.m; sourceTree = "<group>"; };
 		9E824E4816F02DAD00EB88E5 /* Matchismo_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E824E4B16F02DAD00EB88E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E824E4D16F02DAD00EB88E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +128,8 @@
 			children = (
 				9E824E6E16F02E9200EB88E5 /* Card.h */,
 				9E824E6F16F02E9200EB88E5 /* Card.m */,
+				9E54468216F8389B00536FA7 /* PlayingCardMatching.h */,
+				9E54468316F8389B00536FA7 /* PlayingCardMatching.m */,
 				9E824E7116F03B0A00EB88E5 /* Deck.h */,
 				9E824E7216F03B0A00EB88E5 /* Deck.m */,
 				9E824E7416F0475900EB88E5 /* PlayingCard.h */,
@@ -209,6 +214,7 @@
 				9E824E7316F03B0A00EB88E5 /* Deck.m in Sources */,
 				9E824E7616F0475900EB88E5 /* PlayingCard.m in Sources */,
 				9E824E7916F09F0A00EB88E5 /* PlayingCardDeck.m in Sources */,
+				9E54468416F8389B00536FA7 /* PlayingCardMatching.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

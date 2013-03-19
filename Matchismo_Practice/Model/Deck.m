@@ -22,6 +22,8 @@
     return _deck;
 }
 
+#pragma mark - Public Methods
+
 - (void)addCard:(Card *)card atTop:(BOOL)atTop{
     if (card){
         if (atTop){[self.deck insertObject:card atIndex:0];}

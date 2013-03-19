@@ -9,20 +9,36 @@
 #import "PlayingCardViewController.h"
 #import "PlayingCardDeck.h"
 #import "Card.h"
+#import "PlayingCardMatching.h"
 
 @interface PlayingCardViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) int flipCount;
-@property (nonatomic, strong) Deck *newDeck;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (nonatomic, strong) PlayingCardMatching *cardMatchingGame;
 @end
 
 @implementation PlayingCardViewController
 
-- (Deck *)newDeck{
-    if (!_newDeck){
-        _newDeck = [[PlayingCardDeck alloc]init];
+- (PlayingCardMatching *)cardMatchingGame{
+    if (!_cardMatchingGame){
+        _cardMatchingGame = [[PlayingCardMatching alloc]initWithTheseManyCards:[self.cardButtons count]
+                                                           usingThisDeck:[[PlayingCardDeck alloc]init]];
     }
-    return _newDeck;
+    return _cardMatchingGame;
+}
+
+- (void)updateView{
+    for (UIButton *cardButton in self.cardButtons){
+        Card *card = [self.cardMatchingGame cardAtIndex:[self.cardButtons indexOfObject: cardButton]];
+        [cardButton setTitle:card.contents forState:UIControlStateSelected];
+        [cardButton setTitle:card.contents forState:UIControlStateSelected | UIControlStateDisabled];
+        cardButton.selected = card.isFaceUp;
+        cardButton.enabled = !card.isUnPlayable;
+        cardButton.alpha = card.isUnPlayable ? 0.5 : 1.0;
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.cardMatchingGame.scoreForMatchingCards];
+    }
 }
 
 - (void)setFlipCount:(int)flipCount{
@@ -31,11 +47,10 @@
 }
 
 - (IBAction)flipCardWhenTapped:(UIButton *)sender{
-    if (!sender.isSelected){
-        [sender setTitle:[self.newDeck drawRandomCard].contents forState:UIControlStateSelected];
-    }
+    [self.cardMatchingGame flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     sender.selected = !sender.isSelected;
     self.flipCount++;
+    [self updateView];
 }
 
 @end

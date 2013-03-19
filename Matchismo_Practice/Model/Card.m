@@ -17,7 +17,7 @@
     int score = 0;
     for (Card *card in aBunchOfCards){
         if([card.contents isEqualToString:self.contents]){score = 1;}
-    }
+   }
     return score;
 }
 

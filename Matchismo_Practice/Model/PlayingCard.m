@@ -10,6 +10,17 @@
 
 @implementation PlayingCard
 
+//  Overriding Class' 'match' method for 'playingCardMatching' class 
+- (int)match:(NSArray *)aBunchOfCards{
+    int matchingScore = 0;
+    if ([aBunchOfCards count] == 1){
+        PlayingCard *card = [aBunchOfCards lastObject];
+        if ([card.suit isEqualToString:self.suit]){matchingScore = 1;}
+        else if (card.rank == self.rank){matchingScore = 4;}
+    }
+    return matchingScore;
+}
+
 + (NSArray *)validRanks{
     static NSArray *validRanks = nil;
     if (!validRanks){validRanks = @[@"?",@"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];}
