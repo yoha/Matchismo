@@ -10,14 +10,34 @@
 
 @implementation PlayingCard
 
-//  Overriding Class' 'match' method for 'playingCardMatching' class 
+//  Overriding Class' 'match' method for 'playingCardMatching' class.
+//  This method can accomodate as many cards as argument & set score multiplier accordingly.
 - (int)match:(NSArray *)aBunchOfCards{
     int matchingScore = 0;
-    if ([aBunchOfCards count] == 1){
-        PlayingCard *card = [aBunchOfCards lastObject];
-        if ([card.suit isEqualToString:self.suit]){matchingScore = 1;}
-        else if (card.rank == self.rank){matchingScore = 4;}
+    int suitCount = 0;
+    int rankCount = 0;
+    int scoreMultiplier = [aBunchOfCards count];
+    
+    //Validating every object in 'aBunchOfCards' are of type 'PlayingCard'
+    NSMutableArray *verifiedObjectsArePlayingCards = [[NSMutableArray alloc]init];
+    for (id toBeVerifiedCard in aBunchOfCards){
+        if ([toBeVerifiedCard isKindOfClass:[PlayingCard class]]){
+            [verifiedObjectsArePlayingCards addObject:toBeVerifiedCard];
+        }
     }
+    
+    if ([aBunchOfCards count]){
+        for (PlayingCard *card in verifiedObjectsArePlayingCards){
+            //  For every matching rank or suit, we tally them.
+            if ([card.suit isEqualToString:self.suit]){suitCount++;}
+            else if (card.rank == self.rank){rankCount++;}
+            //  And we multiply the respective tally by the amount of opened cards.
+            //  If the tallies are not equal to the # of opened cards, 'matchingScore' is nil.
+            if (suitCount == [verifiedObjectsArePlayingCards count]){matchingScore += 1 * scoreMultiplier;}
+            else if (rankCount == [verifiedObjectsArePlayingCards count]){matchingScore += 2 * scoreMultiplier;}
+        }
+    }
+    
     return matchingScore;
 }
 
@@ -26,6 +46,8 @@
     if (!validRanks){validRanks = @[@"?",@"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];}
     return validRanks;
 }
+
+#pragma mark - Public Method
 
 + (NSArray *)validSuits{
     static NSArray *validSuits = nil;
@@ -49,6 +71,8 @@
 - (void)setRank:(NSUInteger)rank{
     if (rank <= [PlayingCard maxRank]){_rank = rank;}
 }
+
+#pragma mark - Public Method
 
 + (NSUInteger)maxRank{
     return [[PlayingCard validRanks] count] - 1;

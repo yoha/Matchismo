@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E54468416F8389B00536FA7 /* PlayingCardMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E54468316F8389B00536FA7 /* PlayingCardMatching.m */; };
+		9E71E3A816FFFFD60038D882 /* playingCard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E71E3A716FFFFD60038D882 /* playingCard.jpeg */; };
 		9E824E4C16F02DAD00EB88E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E824E4B16F02DAD00EB88E5 /* UIKit.framework */; };
 		9E824E4E16F02DAD00EB88E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E824E4D16F02DAD00EB88E5 /* Foundation.framework */; };
 		9E824E5016F02DAD00EB88E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E824E4F16F02DAD00EB88E5 /* CoreGraphics.framework */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		9E54468216F8389B00536FA7 /* PlayingCardMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardMatching.h; path = Model/PlayingCardMatching.h; sourceTree = "<group>"; };
 		9E54468316F8389B00536FA7 /* PlayingCardMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardMatching.m; path = Model/PlayingCardMatching.m; sourceTree = "<group>"; };
+		9E71E3A716FFFFD60038D882 /* playingCard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = playingCard.jpeg; sourceTree = "<group>"; };
 		9E824E4816F02DAD00EB88E5 /* Matchismo_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E824E4B16F02DAD00EB88E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E824E4D16F02DAD00EB88E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +112,7 @@
 		9E824E5216F02DAD00EB88E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E71E3A716FFFFD60038D882 /* playingCard.jpeg */,
 				9E824E5A16F02DAD00EB88E5 /* PlayingCardAppDelegate.h */,
 				9E824E5B16F02DAD00EB88E5 /* PlayingCardAppDelegate.m */,
 				9E824E5316F02DAD00EB88E5 /* Matchismo_Practice-Info.plist */,
@@ -197,6 +200,7 @@
 				9E824E6016F02DAD00EB88E5 /* Default@2x.png in Resources */,
 				9E824E6216F02DAD00EB88E5 /* Default-568h@2x.png in Resources */,
 				9E824E6516F02DAD00EB88E5 /* MainStoryboard.storyboard in Resources */,
+				9E71E3A816FFFFD60038D882 /* playingCard.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

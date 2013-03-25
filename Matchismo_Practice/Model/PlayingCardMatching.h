@@ -13,7 +13,9 @@
 
 @property (nonatomic, readonly) int scoreForMatchingCards;
 
-- (void)flipCardAtIndex:(NSUInteger)index;
+@property (nonatomic, strong, readonly) NSString *resultForMatchingCards;
+
+- (void)flipCardAtIndex:(NSUInteger)index withGamingMode:(NSUInteger)gameMode;
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
